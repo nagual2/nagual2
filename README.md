@@ -15,7 +15,7 @@ OpenWrt multi-WAN, IPv6 architecture, VPN/tunneling, embedded networking, and au
 - **Multi-WAN / failover** — mwan3 policy routing, health checks, IPv6 over WireGuard and tunnel brokers
 - **IPv6** — NPTv6, prefix delegation, split-default routing, HE/6in4 integration
 - **OpenWrt** — custom packages, LuCI extensions, opkg/apk builds, prod/dev lab workflows
-- **Automation** — Bash, Python, PowerShell; CI-friendly packaging and deploy scripts
+- **Automation** — Perl, Bash, Python, PowerShell; CI-friendly packaging and deploy scripts
 
 ### Core stack
 
@@ -25,6 +25,7 @@ OpenWrt multi-WAN, IPv6 architecture, VPN/tunneling, embedded networking, and au
 ![WireGuard](https://img.shields.io/badge/WireGuard-VPN-88171A)
 ![Bash](https://img.shields.io/badge/Bash-Shell-4EAA25?logo=gnu-bash&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-Automation-3776AB?logo=python&logoColor=white)
+![Perl](https://img.shields.io/badge/Perl-Mojolicious-39457E?logo=perl&logoColor=white)
 ![nftables](https://img.shields.io/badge/nftables-fw4-1E5128)
 ![Docker](https://img.shields.io/badge/Docker-Tools-2496ED?logo=docker&logoColor=white)
 
