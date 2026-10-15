@@ -17,6 +17,8 @@ OpenWrt multi-WAN, IPv6 architecture, VPN/tunneling, SSH3/QUIC, MCP tooling, and
 - **OpenWrt** — custom packages, LuCI extensions, opkg/apk builds, prod/dev lab workflows
 - **SSH3 / QUIC** — HTTP/3-based remote shell: upstream Go forks (`ssh3-go`, `quic-go`), SSH3 transports in tooling
 - **MCP tooling** — unified SSH MCP server with a host registry (direct, SSH3/QUIC and WSL-proxied transports)
+- **AI-assisted engineering (vibecoding)** — agentic CLI workflows as a first-class dev process: repo rules & skills, plan → tests → code loops, multi-agent orchestration
+- **Local LLM stack** — Ollama models and embeddings, agent memory (`echovault`), custom MCP servers
 - **Automation** — Perl, Bash, Python, PowerShell; CI-friendly packaging and deploy scripts
 
 ### Background
@@ -30,6 +32,8 @@ OpenWrt multi-WAN, IPv6 architecture, VPN/tunneling, SSH3/QUIC, MCP tooling, and
 ![OpenWrt](https://img.shields.io/badge/OpenWrt-Networking-00B5AD?logo=openwrt&logoColor=white)
 ![IPv6](https://img.shields.io/badge/IPv6-Multi--WAN-0052CC)
 ![SSH3](https://img.shields.io/badge/SSH3-HTTP%2F3%20over%20QUIC-673AB7)
+![MCP](https://img.shields.io/badge/MCP-Agent%20Tooling-7B2FBE)
+![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-0F172A?logo=ollama&logoColor=white)
 ![WireGuard](https://img.shields.io/badge/WireGuard-VPN-88171A)
 ![Bash](https://img.shields.io/badge/Bash-Shell-4EAA25?logo=gnu-bash&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-Automation-3776AB?logo=python&logoColor=white)
@@ -71,6 +75,8 @@ Production and dev OpenWrt routers (x86/64), Hyper-V and WSL2 sandboxes, SSH-dri
 - IPv6-Architektur: WireGuard, Tunnelbroker, Policy Routing, nftables/fw4
 - **SSH3 (HTTP/3 über QUIC)** — Go-Forks, SSH3-Transports im Tooling
 - **MCP-Tooling** für Netzwerkautomation (SSH-Host-Registry, direkte und WSL-proxiierte Verbindungen)
+- **KI-gestützte Entwicklung (Vibecoding)** — agentische CLI-Workflows als fester Teil des Dev-Prozesses: Repo-Regeln und Skills, Plan–Test–Code-Schleifen, Multi-Agenten-Orchestrierung
+- **Lokale LLM-Infrastruktur** — Ollama-Modelle und Embeddings, Agent-Gedächtnis (`echovault`), eigene MCP-Server
 - Automatisierung von Build, Deploy und Tests (Bash, Python, PowerShell)
 
 Über 20 Jahre Systemadministration und Netzwerke: ISP-Betrieb, Hochlast-Hosting auf Nginx, VPN-Infrastruktur, FreeBSD/Linux-Administration, Perl/Mojolicious- und Python-Entwicklung; das letzte Jahrzehnt — Support-Engineering im Fintech.
@@ -81,7 +87,7 @@ Wichtigste öffentliche Repositories siehe Tabelle oben.
 
 ## Русский
 
-Инженер по Linux и сетям: OpenWrt, **multi-WAN**, **IPv6**, VPN, **SSH3/QUIC**, MCP-инструментарий и автоматизация.
+Инженер по Linux и сетям: OpenWrt, **multi-WAN**, **IPv6**, VPN, **SSH3/QUIC**, MCP-инструментарий и автоматизация. Рабочий процесс — **вайбкодинг**: агентские CLI-сценарии, правила и skills репозитория, мульти-агентная оркестрация; локальный LLM-стек (Ollama, embeddings) и память агентов (`echovault`).
 
 20+ лет системного администрирования и сетей: ISP, high-load хостинг на Nginx, VPN-инфраструктура, FreeBSD/Linux, разработка на Perl/Mojolicious и Python; последнее десятилетие — support-инжиниринг в финтехе.
 
