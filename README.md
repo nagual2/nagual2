@@ -47,8 +47,9 @@ OpenWrt multi-WAN, IPv6 architecture, VPN/tunneling, SSH3/QUIC, MCP tooling, and
 
 | Project | Role |
 |---------|------|
-| [**ssh3-c**](https://github.com/nagual2/ssh3-c) | Pure C17 SSH3 implementation — nginx-style zero-copy data path, drop-in replacement for ssh3-go |
+| [**ssh3-c**](https://github.com/nagual2/ssh3-c) | Pure C17 SSH3 implementation — nginx-style zero-copy data path |
 | [**ssh3-rust**](https://github.com/nagual2/ssh3-rust) | SSH3 over HTTP/3 in Rust — QUIC + TLS 1.3, wire-compatible with the Go implementation |
+| [**ssh3-go**](https://github.com/nagual2/ssh3-go) | SSH3 Go fork — the shipped product (upstream tracking, patches) |
 | [**mwan6-npt**](https://github.com/nagual2/mwan6-npt) | NPTv6 for multi-WAN OpenWrt — nftables hooks, UCI, hotplug |
 | [**mwan3**](https://github.com/nagual2/mwan3) | Fork with IPv6 track-host routes, connected-ipset filter, conntrack helpers |
 | [**ssh-hosts-mcp**](https://github.com/nagual2/ssh-hosts-mcp) | Unified SSH MCP server with a host registry — direct, SSH3 (QUIC) and WSL-proxied transports |
@@ -63,7 +64,7 @@ OpenWrt multi-WAN, IPv6 architecture, VPN/tunneling, SSH3/QUIC, MCP tooling, and
 - [luci-i18n-mwan3-ru](https://github.com/nagual2/luci-i18n-mwan3-ru) · [luci-i18n-mwan6-npt-ru](https://github.com/nagual2/luci-i18n-mwan6-npt-ru) · [luci-i18n-tailscale-community-ru](https://github.com/nagual2/luci-i18n-tailscale-community-ru) — Russian LuCI translations
 - [luci-vpn-visibility](https://github.com/nagual2/luci-vpn-visibility) — LuCI overlay: VPN tunnels on the status Network panel (OpenWrt 25.12+)
 - [openwrt-extended-backup](https://github.com/nagual2/openwrt-extended-backup) — extended OpenWrt backup tooling
-- [ssh3-go](https://github.com/nagual2/ssh3-go) · [quic-go](https://github.com/nagual2/quic-go) — SSH3 and QUIC Go forks (upstream tracking, patches)
+- [quic-go](https://github.com/nagual2/quic-go) — QUIC Go fork (upstream tracking, patches)
 - [echovault](https://github.com/nagual2/echovault) — local-first agent memory (fork)
 
 ### Lab environment
