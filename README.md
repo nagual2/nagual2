@@ -15,7 +15,7 @@ OpenWrt multi-WAN, IPv6 architecture, VPN/tunneling, SSH3/QUIC, MCP tooling, and
 - **Multi-WAN / failover** — mwan3 policy routing, health checks, IPv6 over WireGuard and tunnel brokers
 - **IPv6** — NPTv6, prefix delegation, split-default routing, HE/6in4 integration
 - **OpenWrt** — custom packages, LuCI extensions, opkg/apk builds, prod/dev lab workflows
-- **SSH3 / QUIC** — HTTP/3-based remote shell: upstream Go forks (`ssh3-go`, `quic-go`), SSH3 transports in tooling
+- **SSH3 / QUIC** — HTTP/3-based remote shell: original C and Rust implementations (`ssh3-c`, `ssh3-rust`), upstream Go fork (`ssh3-go` — shipped product), SSH3 transports in tooling
 - **MCP tooling** — unified SSH MCP server with a host registry (direct, SSH3/QUIC and WSL-proxied transports)
 - **AI-assisted engineering (vibecoding)** — agentic CLI workflows as a first-class dev process: repo rules & skills, plan → tests → code loops, multi-agent orchestration
 - **Local LLM stack** — Ollama models and embeddings, agent memory (`echovault`), custom MCP servers
@@ -32,6 +32,8 @@ OpenWrt multi-WAN, IPv6 architecture, VPN/tunneling, SSH3/QUIC, MCP tooling, and
 ![OpenWrt](https://img.shields.io/badge/OpenWrt-Networking-00B5AD?logo=openwrt&logoColor=white)
 ![IPv6](https://img.shields.io/badge/IPv6-Multi--WAN-0052CC)
 ![SSH3](https://img.shields.io/badge/SSH3-HTTP%2F3%20over%20QUIC-673AB7)
+![C](https://img.shields.io/badge/C17-Systems%20C-A8B9CC?logo=c&logoColor=black)
+![Rust](https://img.shields.io/badge/Rust-SSH3%20impl-DEA584?logo=rust&logoColor=black)
 ![MCP](https://img.shields.io/badge/MCP-Agent%20Tooling-7B2FBE)
 ![Ollama](https://img.shields.io/badge/Ollama-Local%20LLM-0F172A?logo=ollama&logoColor=white)
 ![WireGuard](https://img.shields.io/badge/WireGuard-VPN-88171A)
@@ -45,6 +47,8 @@ OpenWrt multi-WAN, IPv6 architecture, VPN/tunneling, SSH3/QUIC, MCP tooling, and
 
 | Project | Role |
 |---------|------|
+| [**ssh3-c**](https://github.com/nagual2/ssh3-c) | Pure C17 SSH3 implementation — nginx-style zero-copy data path, drop-in replacement for ssh3-go |
+| [**ssh3-rust**](https://github.com/nagual2/ssh3-rust) | SSH3 over HTTP/3 in Rust — QUIC + TLS 1.3, wire-compatible with the Go implementation |
 | [**mwan6-npt**](https://github.com/nagual2/mwan6-npt) | NPTv6 for multi-WAN OpenWrt — nftables hooks, UCI, hotplug |
 | [**mwan3**](https://github.com/nagual2/mwan3) | Fork with IPv6 track-host routes, connected-ipset filter, conntrack helpers |
 | [**ssh-hosts-mcp**](https://github.com/nagual2/ssh-hosts-mcp) | Unified SSH MCP server with a host registry — direct, SSH3 (QUIC) and WSL-proxied transports |
@@ -56,7 +60,8 @@ OpenWrt multi-WAN, IPv6 architecture, VPN/tunneling, SSH3/QUIC, MCP tooling, and
 
 ### Also maintained
 
-- [luci-i18n-mwan3-ru](https://github.com/nagual2/luci-i18n-mwan3-ru) · [luci-i18n-mwan6-npt-ru](https://github.com/nagual2/luci-i18n-mwan6-npt-ru) — Russian LuCI translations
+- [luci-i18n-mwan3-ru](https://github.com/nagual2/luci-i18n-mwan3-ru) · [luci-i18n-mwan6-npt-ru](https://github.com/nagual2/luci-i18n-mwan6-npt-ru) · [luci-i18n-tailscale-community-ru](https://github.com/nagual2/luci-i18n-tailscale-community-ru) — Russian LuCI translations
+- [luci-vpn-visibility](https://github.com/nagual2/luci-vpn-visibility) — LuCI overlay: VPN tunnels on the status Network panel (OpenWrt 25.12+)
 - [openwrt-extended-backup](https://github.com/nagual2/openwrt-extended-backup) — extended OpenWrt backup tooling
 - [ssh3-go](https://github.com/nagual2/ssh3-go) · [quic-go](https://github.com/nagual2/quic-go) — SSH3 and QUIC Go forks (upstream tracking, patches)
 - [echovault](https://github.com/nagual2/echovault) — local-first agent memory (fork)
@@ -73,7 +78,7 @@ Production and dev OpenWrt routers (x86/64), Hyper-V and WSL2 sandboxes, SSH-dri
 
 - OpenWrt-Pakete und LuCI-Erweiterungen für **mwan3** und **NPTv6**
 - IPv6-Architektur: WireGuard, Tunnelbroker, Policy Routing, nftables/fw4
-- **SSH3 (HTTP/3 über QUIC)** — Go-Forks, SSH3-Transports im Tooling
+- **SSH3 (HTTP/3 über QUIC)** — eigene Implementierungen in C (`ssh3-c`) und Rust (`ssh3-rust`), Go-Fork als ausgeliefertes Produkt, SSH3-Transports im Tooling
 - **MCP-Tooling** für Netzwerkautomation (SSH-Host-Registry, direkte und WSL-proxiierte Verbindungen)
 - **KI-gestützte Entwicklung (Vibecoding)** — agentische CLI-Workflows als fester Teil des Dev-Prozesses: Repo-Regeln und Skills, Plan–Test–Code-Schleifen, Multi-Agenten-Orchestrierung
 - **Lokale LLM-Infrastruktur** — Ollama-Modelle und Embeddings, Agent-Gedächtnis (`echovault`), eigene MCP-Server
@@ -91,7 +96,7 @@ Wichtigste öffentliche Repositories siehe Tabelle oben.
 
 20+ лет системного администрирования и сетей: ISP, high-load хостинг на Nginx, VPN-инфраструктура, FreeBSD/Linux, разработка на Perl/Mojolicious и Python; последнее десятилетие — support-инжиниринг в финтехе.
 
-Основные открытые проекты — **mwan3**, **mwan6-npt**, **ssh-hosts-mcp**, **luci-app-netbird** и связанные LuCI-пакеты для продакшен-роутеров с несколькими туннелями.
+Основные открытые проекты — **ssh3-c** (реализация SSH3 на чистом C17), **ssh3-rust**, **mwan3**, **mwan6-npt**, **ssh-hosts-mcp**, **luci-app-netbird** и связанные LuCI-пакеты для продакшен-роутеров с несколькими туннелями.
 
 ---
 
